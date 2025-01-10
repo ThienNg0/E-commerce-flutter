@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -7,29 +8,26 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 80),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _signupText(context),
-            const SizedBox(height: 20),
-            _emailField(context),
-            const SizedBox(height: 20),
-            _passwordField(context),
-            const SizedBox(height: 20),
-            _confirmPasswordField(context),
-            const SizedBox(height: 20),
-            _signupButton(),
-          ],
+      appBar: const BasicAppbar(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _signupText(context),
+              const SizedBox(height: 20),
+              _firstNameField(context),
+              const SizedBox(height: 20),
+              _lastNameField(context),
+              const SizedBox(height: 20),
+              _emailField(context),
+              const SizedBox(height: 20),
+              _passwordField(context),
+              const SizedBox(height: 20),
+              _signupButton(),
+            ],
+          ),
         ),
       ),
     );
@@ -41,6 +39,22 @@ class SignupPage extends StatelessWidget {
       style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget _firstNameField(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'First Name',
+      ),
+    );
+  }
+
+  Widget _lastNameField(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Last Name',
       ),
     );
   }
@@ -58,15 +72,6 @@ class SignupPage extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
-      ),
-    );
-  }
-
-  Widget _confirmPasswordField(BuildContext context) {
-    return TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-        hintText: 'Confirm Password',
       ),
     );
   }

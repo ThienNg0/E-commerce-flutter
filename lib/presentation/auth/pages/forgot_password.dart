@@ -12,9 +12,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppbar(
-        hideBack: true,
-      ),
+      appBar: const BasicAppbar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
