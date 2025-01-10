@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
+import 'package:flutter/gestures.dart';
+import 'package:ecommerce_app/presentation/auth/pages/signin.dart';
+import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -26,6 +29,8 @@ class SignupPage extends StatelessWidget {
               _passwordField(context),
               const SizedBox(height: 20),
               _signupButton(),
+              const SizedBox(height: 20),
+              _signInOption(context),
             ],
           ),
         ),
@@ -35,7 +40,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _signupText(BuildContext context) {
     return Text(
-      'Sign Up',
+      'Create Account',
       style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
@@ -80,6 +85,30 @@ class SignupPage extends StatelessWidget {
     return BasicAppButton(
       onPressed: () {},
       title: 'Sign Up',
+    );
+  }
+
+  Widget _signInOption(BuildContext context) {
+    return Center(
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: "Do you have an account? ",
+            ),
+            TextSpan(
+              text: "Sign in",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  AppNavigator.push(context, const SigninPage());
+                },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
