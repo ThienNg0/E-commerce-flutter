@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/common/widgets/button/basic_app_button.dart';
-import 'package:flutter/gestures.dart';
 import 'package:ecommerce_app/presentation/auth/pages/enter_password.dart';
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
-import 'package:ecommerce_app/presentation/auth/pages/signup.dart';
 import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 
 class ForgotPasswordPage extends StatelessWidget {

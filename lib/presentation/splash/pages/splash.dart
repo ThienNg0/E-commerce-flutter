@@ -4,7 +4,7 @@ import 'package:ecommerce_app/core/configs/assets/app_vectors.dart';
 import 'package:ecommerce_app/core/configs/theme/app_colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_cubit.dart';
-import 'package:ecommerce_app/presentation/auth/pages/siginin.dart';
+import 'package:ecommerce_app/presentation/auth/pages/signin.dart';
 import 'package:ecommerce_app/presentation/splash/bloc/splash_state.dart';
 
 class SplashPage extends StatelessWidget {
