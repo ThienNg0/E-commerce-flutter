@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:ecommerce_app/presentation/auth/pages/enter_password.dart';
 import 'package:ecommerce_app/common/helper/navigator/app_navigator.dart';
 import 'package:ecommerce_app/presentation/auth/pages/signup.dart';
+import 'package:ecommerce_app/common/widgets/appbar/app_bar.dart';
 
 class SigninPage extends StatelessWidget {
   const SigninPage({super.key});
@@ -11,8 +12,11 @@ class SigninPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const BasicAppbar(
+        hideBack: true,
+      ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 80),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -66,8 +70,8 @@ class SigninPage extends StatelessWidget {
     return RichText(
         text: TextSpan(children: [
       TextSpan(
-          text: "Don't have an account? ",
-        ),
+        text: "Don't have an account? ",
+      ),
       TextSpan(
           text: "Create one",
           style: TextStyle(fontWeight: FontWeight.bold),
